@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for team in teams %}
+    <ul>
+        <li>Name: {{ team.name }}     Points: {{ team.points }}</li>
+
+        <a href="/teams/{{ team.id }}/edit"><span>&#9998;</span></a>
+
+        <form action="/teams/ {{ team.id }}/delete" method="post">
+            <button>Delete</button>
+        </form>
+    </ul>  
+    
+
+{% endfor %}
+
+<form action="/teams/delete" method="post">
+    <button type="submit">Delete All</button>
+</form>
+
+{% endblock %}

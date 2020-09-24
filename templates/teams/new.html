@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/teams" method="post">
+        <label for="name">Team Name</label>
+        <input type="text" name="name" id="name" placeholder="name" required autofocus>
+        <label for="points">Points</label>
+        <input type="number" name="points" id="points" placeholder="points" required autofocus>
+
+        <button type="submit">Add Team</button>
+    </form>    
+
+{% endblock %}
